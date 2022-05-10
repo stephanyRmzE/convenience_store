@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2022_05_10_023647) do
     t.decimal "price", precision: 15, scale: 2, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "sku"
     t.string "photo_url"
     t.bigint "category_id", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
