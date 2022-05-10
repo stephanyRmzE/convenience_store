@@ -5,38 +5,33 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
 
-PRODUCTS_COUNT = 100
+puts 'Cleaning database'
+Category.destroy_all
+Product.destroy_all
 
-MAX_CATEGORIES = 3
+puts 'Adding database items'
+fruits = Category.create!(title: 'Fruits')
+vegetables = Category.create!(title: 'Vegetables')
+beverages = Category.create!(title: 'Beverages')
 
-MAX_VARIANTS = 4
-VARIANTS_WEIGHT = 0.53
+apples = Product.new(title: 'Apples', price: 1.79)
+apples.category = fruits
+apples.save
+strawberries = Product.new(title: 'Strawberries', price: 4.58)
+strawberries.category = fruits
+strawberries.save
 
+potatoes = Product.new(title: 'Potatoes', price: 0.97)
+potatoes.category = vegetables
+potatoes.save
+tomatoes = Product.new(title: 'Tomatoes', price: 1.69)
+tomatoes.category = vegetables
+tomatoes.save
 
-Category.find_or_create_by!(title: 'Fruits')
-Category.find_or_create_by!(title: 'Vegetables')
-Category.find_or_create_by!(title: 'Beverages')
-
-PRODUCTS_COUNT.times do
-
-  title = ''
-
-  # generate unique title
-  loop do
-    title = Faker::Commerce.product_name
-    break unless Product.exists?(title: title)
-  end
-
-  product = Product.new(
-    title: title,
-    price: Faker::Commerce.price
-  )
-
-  num_categories = 1 + rand(MAX_CATEGORIES)
-  product.categories = CATEGORIES.sample(num_categories)
-
-  product.save!
-
-end
+coffee = Product.new(title: 'coffee', price: 2.30)
+coffee.category = beverages
+coffee.save
+green_tea = Product.new(title: 'green_tea', price: 0.65)
+green_tea.category = beverages
+green_tea.save
