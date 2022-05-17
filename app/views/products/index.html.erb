@@ -10,7 +10,7 @@
         <div class="card">
           <%= image_tag product.photo_url , class: "card-img-top", alt: 'fun' %>
           <div class="card-body">
-            <h5 class="card-title"><%= product.title %></h5>
+            <h5 class="card-title"><%= product.title %> <%= product.price %></h5>
             <%= form_tag order_items_path do %>
               <%= hidden_field_tag :product_id, product.id %>
               <%= number_field_tag :quantity, 1 %>

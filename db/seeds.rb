@@ -19,7 +19,7 @@ beverages = Category.create!(title: 'Beverages')
 apples = Product.new(title: 'Apples', price: 1.79, photo_url: 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80')
 apples.category = fruits
 apples.save
-strawberries = Product.new(title: 'Strawberries', price: 4.58, photo_url: 'https://images.unsplash.com/photo-1543158181-e6f9f6712055?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+strawberries = Product.new(title: 'Strawberries', price: 5.00, discount: 2, photo_url: 'https://images.unsplash.com/photo-1543158181-e6f9f6712055?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
 strawberries.category = fruits
 strawberries.save
 
@@ -30,9 +30,9 @@ tomatoes = Product.new(title: 'Tomatoes', price: 1.69, photo_url: 'https://image
 tomatoes.category = vegetables
 tomatoes.save
 
-coffee = Product.new(title: 'coffee', price: 2.30, photo_url: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80')
+coffee = Product.new(title: 'Coffee', discount: 3, price: 11.23, photo_url: 'https://images.unsplash.com/photo-1599639957043-f3aa5c986398?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1088&q=80')
 coffee.category = beverages
 coffee.save
-green_tea = Product.new(title: 'green_tea', price: 0.65, photo_url: 'https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
+green_tea = Product.new(title: 'Green tea', discount: 1, price: 3.11, photo_url: 'https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
 green_tea.category = beverages
 green_tea.save

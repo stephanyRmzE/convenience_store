@@ -16,19 +16,19 @@ class ShoppingCart
 
   def add_item(product_id:, quantity: 1)
     product = Product.find(product_id)
+    prueba = 0 || order.items.find_by(product_id: product_id).quantity
+    add =  prueba >= 1 ? prueba.quantity : 0
 
     order_item = order.items.find_or_initialize_by(
       product_id: product_id
     )
 
     order_item.price = product.price
-    order_item.quantity = quantity
-
+    order_item.quantity = quantity.to_i + add
     order_item.save
   end
 
   def remove_item(id:)
     order.items.destroy(id)
   end
-
 end
