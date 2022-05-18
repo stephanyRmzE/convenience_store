@@ -10,11 +10,11 @@ puts 'Cleaning database'
 Product.destroy_all
 Category.destroy_all
 
-
 puts 'Adding database items'
-fruits = Category.create!(title: 'Fruits')
-vegetables = Category.create!(title: 'Vegetables')
-beverages = Category.create!(title: 'Beverages')
+fruits = Category.create!(title: 'Fruits', photo_url: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170')
+vegetables = Category.create!(title: 'Vegetables', photo_url: 'https://images.unsplash.com/photo-1557844352-761f2565b576?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170')
+beverages = Category.create!(title: 'Beverages', photo_url: 'https://images.unsplash.com/photo-1625865019845-7b2c89b8a8a9?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170')
+snacks = Category.create!(title: 'Snacks', photo_url: 'https://images.unsplash.com/photo-1614735241165-6756e1df61ab?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332')
 
 apples = Product.new(title: 'Apples', price: 1.79, photo_url: 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80')
 apples.category = fruits
@@ -36,3 +36,12 @@ coffee.save
 green_tea = Product.new(title: 'Green tea', discount: 1, price: 3.11, photo_url: 'https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
 green_tea.category = beverages
 green_tea.save
+
+chocolate = Product.new(title: 'Chocolate', discount: 3, price: 1.5, photo_url: 'https://images.unsplash.com/photo-1577735543554-b77ab63447bb?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387')
+chocolate.category = snacks
+chocolate.save
+chips = Product.new(title: 'Chips', discount: 1, price: 2.5, photo_url: 'https://images.unsplash.com/photo-1581533940608-d2973792f542?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170')
+chips.category = snacks
+chips.save
+
+puts 'Database added'

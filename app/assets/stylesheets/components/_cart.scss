@@ -9,6 +9,7 @@ width: 84vw;
 
   h3{
     text-align: right;
+    padding: 1em;
   }
   table{
     width: 100%;
@@ -29,8 +30,7 @@ width: 84vw;
   width: 8vw;
   text-align: center;
 }
-.add-cart {
-  border: 1px solid black;
-  padding: 0.5em 1em;
-  margin: 0 0 0 1em;
+.edit-cart {
+  display: flex;
+  justify-content: center;
 }
