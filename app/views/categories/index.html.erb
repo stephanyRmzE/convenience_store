@@ -1,12 +1,17 @@
-
 <h1>Categories (<%= @categories.length %> products)</h1>
-
-  <ol>
-    <% @categories.each do |category| %>
-      <li>
-        <%= link_to category_products_path(category) do %>
-          <%= category.title %>
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <div class = "cards">
+        <% @categories.each do |category| %>
+          <div class = "card">
+            <%= link_to category_products_path(category) do %>
+              <%= image_tag category.photo_url , class: "card-img-top", alt: 'fun' %>
+              <div class="card-body">
+                <h5 class="card-title"><%= category.title %></h5>
+              </div>
+            <% end %>
+          </div>
         <% end %>
-      </li>
-    <% end %>
-  </ol>
+      </div>
+    </div>
+  </div>
