@@ -12,28 +12,27 @@ body {
   background: #f2f2f2;
 }
 
-nav {
-  background: #171c24;
+.navbar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
-  padding: 0 100px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background: #4c069b;
 }
 
-nav .logo {
-  color: #fff;
-  font-size: 30px;
-  font-weight: 600;
-  letter-spacing: -1px;
+.nav-items .logo{
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
 }
 
-nav .nav-items {
+.nav-items {
   display: flex;
 }
 
-nav .nav-items li {
+.nav-items li {
   list-style: none;
   padding: 0 15px;
 }

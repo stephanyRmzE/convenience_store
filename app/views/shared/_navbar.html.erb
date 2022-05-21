@@ -1,17 +1,29 @@
-      <nav>
+<div class="navbar navbar-fixed-top">
         <div class = "nav-bar">
-          <div class="menu-icon">
-             <span class="fas fa-bars"></span>
+          <div class="nav-items dropdown">
+	          <button class="btn btn-secondary "  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-bars"></i>
+	          </button>
+	          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+              <% Category.all.each do |category| %>
+		            <li><%= link_to category_path(category),  class: "dropdown-item" do %>
+                <%= category.title%>
+                <% end %>
+                </li>
+              <% end %>
+	          </ul>
+        	</div>
+
+          <div class="nav-items">
+            <%= link_to "/" do %>
+              <div class="logo">
+               Mini Mart
+              </div>
+            <% end %>
           </div>
 
-          <%= link_to "/" do %>
-            <div class="logo">
-             Mini Mart
-            </div>
-          <% end %>
-
-          <div>
-            <%= form_tag products_path, method: :get do %>
+          <div class="nav-items">
+            <%= form_tag products_path,  method: :get do %>
               <div class="search-form-control form-group">
                 <%= text_field_tag :query,
                   params[:query],
@@ -26,51 +38,14 @@
           </div>
 
 
-
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
-
+          <div class="nav-items">
           <%= link_to cart_path do %>
             <div class = "link-shopping-cart">
               <i class="fas fa-shopping-cart shopping-cart"></i>
               <div class ="number-circle"> <%= current_cart.items_count %></div>
             </div>
           <% end %>
+          </div>
 
         </div>
-      </nav>
-
-      <script>
-         const menuBtn = document.querySelector(".menu-icon span");
-         const searchBtn = document.querySelector(".search-icon");
-         const cancelBtn = document.querySelector(".cancel-icon");
-         const items = document.querySelector(".nav-items");
-         const form = document.querySelector("form");
-         menuBtn.onclick = ()=>{
-           items.classList.add("active");
-           menuBtn.classList.add("hide");
-           searchBtn.classList.add("hide");
-           cancelBtn.classList.add("show");
-         }
-         cancelBtn.onclick = ()=>{
-           items.classList.remove("active");
-           menuBtn.classList.remove("hide");
-           searchBtn.classList.remove("hide");
-           cancelBtn.classList.remove("show");
-           form.classList.remove("active");
-           cancelBtn.style.color = "#ff3d00";
-         }
-         searchBtn.onclick = ()=>{
-           form.classList.add("active");
-           searchBtn.classList.add("hide");
-           cancelBtn.classList.add("show");
-         }
-      </script>
+</div>
