@@ -11,14 +11,23 @@
           <% end %>
 
           <div>
+
             <div class="search-icon">
             <span class="fas fa-search"></span>
             </div>
 
-            <form action="#">
-              <input type="search" class="search-data" placeholder="Search" required>
-              <button type="submit" class="fas fa-search"></button>
-            </form>
+            <%= form_tag categories888_path, method: :get do %>
+              <div class="search-form-control form-group">
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "Search"
+                %>
+                <%= button_tag :submit , class: "btn" do %>
+                      <i class="fas fa-search"></i>
+                    <% end %>
+              </div>
+            <% end %>
           </div>
 
           <div class="dropdown">
