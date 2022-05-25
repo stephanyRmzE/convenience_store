@@ -19,6 +19,7 @@ body {
   width: 100%;
   background: #4c069b;
   height: 95px;
+  padding: 0 1em;
 }
 
 .nav-items .logo{
@@ -34,6 +35,9 @@ body {
   padding: 0 0.5em;
 }
 
+.search-window{
+  width: 40vw;
+}
 
 nav form {
   display: flex;
