@@ -44,4 +44,8 @@
     </tbody>
   </table>
   <h3>Total = <%= @order.sub_total %> </h3>
+  <%= form_tag orders_path do %>
+  <%= hidden_field_tag 'teddy_id', @teddy.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>
 </div>
