@@ -8,14 +8,24 @@
 }
 .card {
   width: auto;
-  border-radius: 0.3em;
+  border-radius: 0.5em;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   height: fit-content;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 30vh;
+  border-radius: 0.5em 0.5em;
 }
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .card-img-top {
+    height: 25vh;
   }
 }
 
@@ -45,4 +55,9 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+.card-title{
+  text-align: center;
+  font-weight: 400;
 }
