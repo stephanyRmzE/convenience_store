@@ -1,21 +1,19 @@
-
 <div class = "cart">
   <h2>Current Cart</h2>
   <table>
     <thead>
       <tr>
-          <td>Product</td>
+          <td class ="product-image">Product</td>
           <td>Price</td>
           <td>Quantity</td>
           <td>Subtotal</td>
-          <td></td>
       </tr>
     </thead>
     <tbody>
       <% @items.each do |item| %>
         <tr>
-          <td>
-          <%= image_tag item.product.photo_url , class: "image-cart", alt: 'product' %>
+          <td class ="product-image">
+          <%= image_tag item.product.photo_url ,  alt: 'product' %>
           <%= item.product.title %>
           </td>
           <td><%= number_to_currency item.price %></td>
@@ -25,25 +23,22 @@
                   <%= hidden_field_tag :product_id, item.product.id %>
                   <div class = "quant-cart">
                     <%= number_field_tag :quantity, item.quantity %>
-                    <%= button_tag :submit , class: "btn" do %>
+                    <%= button_tag :submit , class: "btn btn-purple" do %>
                       <i class="fas fa-pencil-alt"></i>
                     <% end %>
                   </div>
             <% end %>
+            <div class="edit-order">
             <%= form_for item, method: :delete do |f| %>
-                 <%= f.button :submit, class: "btn" do %>
+                 <%= f.button :submit, class: "btn btn-purple" do %>
                     <i class="fas fa-trash-alt"></i>
                  <% end %>
               <% end %>
+            </div>
           </div>
           </td>
 
-          <td>
-          <%= item.price * item.quantity %>
-          </td>
-          <td>
-
-          </td>
+          <td><%= item.price * item.quantity %></td>
         </tr>
       <% end %>
     </tbody>
