@@ -9,6 +9,19 @@ thead td {
   }
 
 td{
-  padding: 0;
+  padding: 0 1em 0 1em;
   text-align: center;
+}
+
+tbody td {
+  height: 25vh;
+}
+
+table{
+  width: 100%;
+}
+@media (max-width: 900px) {
+  tbody td {
+    height: 20vh;
+  }
 }
