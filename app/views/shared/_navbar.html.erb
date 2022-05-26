@@ -1,54 +1,51 @@
 
-      <div class = "nav-bar ">
-          <div class="nav-items">
-            <%= link_to "/" do %>
-              <div class="logo">
-                <%= image_tag "https://cdn3.iconfinder.com/data/icons/vol-5/128/shop-512.png", style:"width: 3em;"%>
-                <p>Mini Mart</p>
-              </div>
-            <% end %>
-          </div>
-
-          <div class="nav-items">
-            <div class = "search-window">
-              <%= form_tag products_path,  method: :get do %>
-                <div class="search-form-control form-group">
-                  <%= text_field_tag :query,
-                     params[:query],
-                     class: "form-control",
-                     placeholder: "Search"
-                  %>
-                  <%= button_tag :submit , class: "btn" do %>
-                      <i class="fas fa-search"></i>
-                    <% end %>
-                </div>
+  <div class = "nav-bar ">
+    <div class="nav-items">
+      <%= link_to "/" do %>
+        <div class="logo">
+          <%= image_tag "https://cdn3.iconfinder.com/data/icons/vol-5/128/shop-512.png", style:"width: 3em;"%>
+          <p>Mini Mart</p>
+        </div>
+      <% end %>
+    </div>
+    <div class="nav-items">
+      <div class = "search-window">
+        <%= form_tag products_path,  method: :get do %>
+          <div class="search-form-control form-group">
+            <%= text_field_tag :query,
+               params[:query],
+               class: "form-control",
+               placeholder: "Search"
+            %>
+            <%= button_tag :submit , class: "btn" do %>
+                <i class="fas fa-search"></i>
               <% end %>
-            </div>
-
-            <div class="dropdown">
-	            <button class="btn btn-cat "  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-bars"></i>
-	            </button>
-	            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                <% Category.all.each do |category| %>
-		              <li><%= link_to category_path(category),  class: "dropdown-item" do %>
-                  <%= category.title%>
-                  <% end %>
-                  </li>
-                <% end %>
-	            </ul>
-        	  </div>
           </div>
-
-
-
-          <div class="nav-items">
-          <%= link_to cart_path do %>
-            <div class = "link-shopping-cart">
-              <i class="fas fa-shopping-cart shopping-cart"></i>
-              <div class ="number-circle"> <%= current_cart.items_count %></div>
-            </div>
-          <% end %>
-          </div>
-
+        <% end %>
       </div>
+      <div class="dropdown">
+	      <button class="btn btn-cat "  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-bars"></i>
+	      </button>
+	      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+          <% Category.all.each do |category| %>
+		        <li><%= link_to category_path(category),  class: "dropdown-item" do %>
+            <%= category.title%>
+            <% end %>
+            </li>
+          <% end %>
+	      </ul>
+      </div>
+    </div>
+    <div class="nav-items">
+    <div class = "shopping-cart-icon">
+      <%= link_to cart_path do %>
+        <div class = "link-shopping-cart">
+          <i class="fas fa-shopping-cart shopping-cart"></i>
+          <div class ="number-circle"> <%= current_cart.items_count %></div>
+        </div>
+      <% end %>
+    </div>
+    </div>
+
+  </div>
