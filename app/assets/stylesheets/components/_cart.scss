@@ -1,7 +1,7 @@
 
 .cart{
   margin: 1em auto 0em;
-  width: 94vw;
+  width: 50%;
 
   h3{
     text-align: right;
@@ -9,9 +9,7 @@
     font-size: 1.2em;
     font-weight: 500;
   }
-  table{
-    width: 100%;
-  }
+
 }
 
 
@@ -45,9 +43,31 @@
   margin: 0.1em 0;
 }
 
-.product-image{
+.product-title {
   display: flex;
   text-align: center;
   flex-direction: column;
-  width: 25vw;
+  width: 100%;
+}
+
+.product-image{
+  height: 80%;
+  width: 85%;
+  margin: 0.5em auto 0 auto;
+}
+
+@media (max-width: 900px) {
+  .cart {
+    width: 80%;
+  }
+}
+
+@media (max-width: 420px) {
+  .cart {
+    width: 95%;
+  }
+
+  .product-image {
+    width: 100%;
+  }
 }
