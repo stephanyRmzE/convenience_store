@@ -38,35 +38,30 @@
       </div>
     </div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+    <div class="nav-items">
+      <div class="dropdown">
+	      <button class="user-btn"  id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= image_tag "user.png", class:'avatar' %>
+	      </button>
+	      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2">
         <% if user_signed_in? %>
-            <li class="nav-item">
-            <%= link_to matches_path, class: "nav-link message" do %>
-              <%= image_tag "message.png" %>
-              <%= render 'shared/notifications_match' %>
+            <li><%= link_to user_path(current_user), class: "dropdown-item" do %>
+              Profile
             <% end %>
             </li>
-            <li class="nav-item">
-            <%= link_to user_path(current_user), class: "nav-link message" do %>
-              <%= image_tag "profile.png" %>
-            <% end %>
-            </li>
-            <li class="nav-item">
-            <%= link_to destroy_user_session_path, :method => :delete , class: "nav-link message" do %>
-              <%= image_tag "logout.png" %>
+            <li><%= link_to destroy_user_session_path, :method => :delete , class: "dropdown-item" do %>
+              Log Out
             <% end %>
             </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to new_user_session_path, class: "nav-link message-login" do %>
-              <%= image_tag "profile.png" %>
+          <li><%= link_to new_user_session_path, class: "dropdown-item" do %>
+            Log In
             <% end %>
           </li>
         <% end %>
-      </ul>
+      </div>
     </div>
-    
+
     <div class="nav-items">
       <div class = "shopping-cart-icon">
         <%= link_to cart_path do %>
