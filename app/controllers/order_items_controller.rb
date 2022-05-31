@@ -10,8 +10,7 @@ class OrderItemsController < ApplicationController
       end
       sum += item.price * item.quantity
     end
-    @order = current_cart.order
-    @order.sub_total = sum
+    current_cart.order.sub_total = sum
   end
 
   def create
