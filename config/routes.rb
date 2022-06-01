@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   resources :charges, only: [:new, :create]
   get 'thanks', to: 'charges#thanks', as: 'thanks'
+  get 'cancel', to: 'charges#cancel', as: 'cancel'
 end
