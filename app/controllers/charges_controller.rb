@@ -3,23 +3,23 @@ class ChargesController < ApplicationController
   before_action :amount_to_be_charged
 
   def new
-    raise
   end
 
   def create
     customer = Stripe::Customer.create(
-    email: params[:stripeEmail],
-    source: params[:stripeToken]
+      email: params[:stripeEmail],
+      source: params[:stripeToken]
   )
     charge = Stripe::Charge.create(
       customer: customer.id,
       amount: @amount,
       currency: 'eur'
     )
+    current_cart.destroy
     redirect_to thanks_path
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to new_charge_path
+    redirect_to cancel_path
   end
 
   def thanks
@@ -28,6 +28,7 @@ class ChargesController < ApplicationController
   private
 
   def amount_to_be_charged
-    @amount = current_cart.order.sub_total
+    @order = Order.find(current_cart.order.id)
+    @amount = (@order.sub_total * 100).to_i
   end
 end

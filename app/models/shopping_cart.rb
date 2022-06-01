@@ -1,5 +1,4 @@
 class ShoppingCart
-
   def initialize(token:)
     @token = token
   end

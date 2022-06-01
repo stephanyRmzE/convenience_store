@@ -6,7 +6,7 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount= <%= @amount %></span>
+      <span>Amount= <%= @amount/100 %></span>
     </label>
   </article>
 
@@ -16,6 +16,8 @@
           data-amount="<%= @amount %>"
           data-email="<%= current_user.email %>"
           data-currency="eur"
+          data-billingAddress="true"
+          data-shippingAddress="true"
           data-locale="auto"></script>
 
 <% end %>

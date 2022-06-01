@@ -43,7 +43,7 @@
       <% end %>
     </tbody>
   </table>
-  <h3>Total = <%= current_cart.order.sub_total %> </h3>
+  <h3>Total = <%= @order.sub_total %> </h3>
   <div >
       <%= link_to "/charges/new" do %>
         <div class="btn-yellow">
