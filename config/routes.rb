@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :order_items, path: '/cart/items'
 
   resources :charges, only: [:new, :create]
-  get 'thanks', to: 'charges#thanks', as: 'thanks'
+  get 'sucess', to: 'charges#sucess', as: 'sucess'
   get 'cancel', to: 'charges#cancel', as: 'cancel'
 end
