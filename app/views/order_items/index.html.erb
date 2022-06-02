@@ -45,6 +45,16 @@
   </table>
   <h3>Total = <%= @order.sub_total %> </h3>
   <div >
+  <%= button_to "Checkout", charges_path,
+    class: "btn btn-primary", method: :post,
+    data: {turbo: false},
+    params: {
+      
+    }
+
+
+  %>
+
       <%= link_to "/charges/new" do %>
         <div class="btn-yellow">
           <p>Buy now</p>
