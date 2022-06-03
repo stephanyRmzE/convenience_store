@@ -29,6 +29,7 @@ gem 'autoprefixer-rails'
 # gem 'image_processing', '~> 1.2'
 gem 'devise'
 gem 'stripe'
+gem 'money-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

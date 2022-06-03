@@ -30,4 +30,5 @@ class ShoppingCart
   def remove_item(id:)
     order.items.destroy(id)
   end
+
 end

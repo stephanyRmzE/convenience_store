@@ -3,9 +3,14 @@ class OrderItem < ApplicationRecord
   belongs_to :product
 
   def to_builder
-    Jbuilder.new do |item|
-      item.price stripe_price_id
-      item.quantity 1
+    Jbuilder.new do |product|
+      product.price_data [
+        currency: 'eur',
+        unit_amount: (price * 100).to_i,
+        product: product_id
+      ]
+      product.quantity quantity
     end
   end
+
 end
