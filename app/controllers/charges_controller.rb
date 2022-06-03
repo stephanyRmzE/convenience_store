@@ -26,6 +26,7 @@ class ChargesController < ApplicationController
 
   def amount_to_be_charged
     @order = Order.find(current_cart.order.id)
+    @order_items = @order.items
     @cart = {}
     @cart = @order.items.map(&:product)
     @amount = (@order.sub_total * 100).to_i
