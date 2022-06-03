@@ -45,20 +45,9 @@
   </table>
   <h3>Total = <%= @order.sub_total %> </h3>
   <div >
-  <%= button_to "Checkout", charges_path,
-    class: "btn btn-primary", method: :post,
-    data: {turbo: false},
-    params: {
-      
-    }
+  <% if current_cart.present? %>
+        <%= button_to "Buy now!", charges_create_path, remote: true, data: { disable_with: "validating..."} %>
+    <% end %>
 
-
-  %>
-
-      <%= link_to "/charges/new" do %>
-        <div class="btn-yellow">
-          <p>Buy now</p>
-        </div>
-      <% end %>
     </div>
 </div>

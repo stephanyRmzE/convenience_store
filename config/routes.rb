@@ -8,8 +8,7 @@ Rails.application.routes.draw do
 
   get '/cart', to: 'order_items#index'
   resources :order_items, path: '/cart/items'
-
-  resources :charges, only: [:new, :create]
-  get 'sucess', to: 'charges#sucess', as: 'sucess'
+  post "charges/create", to: "charges#create"
+  get 'success', to: 'charges#success', as: 'success'
   get 'cancel', to: 'charges#cancel', as: 'cancel'
 end
