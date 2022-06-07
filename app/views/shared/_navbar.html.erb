@@ -67,7 +67,13 @@
         <%= link_to cart_path do %>
           <div class = "link-shopping-cart">
             <i class="fas fa-shopping-cart shopping-cart"></i>
-            <div class ="number-circle"> <%= current_cart.items_count %></div>
+            <div class ="number-circle"> <%=
+            if current_cart.present?
+              current_cart.items_count
+            else
+              0
+            end
+            %></div>
           </div>
         <% end %>
       </div>
