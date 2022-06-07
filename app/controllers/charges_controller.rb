@@ -17,6 +17,7 @@ class ChargesController < ApplicationController
   end
 
   def success
+    @order.update(status: 'Paid', first_name: current_user.first_name, last_name: current_user.last_name)
     current_cart.remove_all
     if params[:session_id].present?
       # session.delete(:cart)
@@ -27,6 +28,7 @@ class ChargesController < ApplicationController
   end
 
   def cancel
+    @order.update(status: 'Cancelled', first_name: current_user.first_name, last_name: current_user.last_name)
   end
 
   private
