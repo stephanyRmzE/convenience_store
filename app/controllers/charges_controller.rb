@@ -19,7 +19,7 @@ class ChargesController < ApplicationController
   def success
     if params[:session_id].present?
       # session.delete(:cart)
-      session[:current_cart] = [] # empty cart = empty array
+      empty_cart
       @session_with_expand = Stripe::Checkout::Session.retrieve({ id: params[:session_id], expand: ["line_items"]})
     else
       redirect_to cancel_url, alert: "No info to display"
