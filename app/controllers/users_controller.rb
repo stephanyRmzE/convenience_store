@@ -15,10 +15,6 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
-  def reservation
-    @user = authorize User.find(params[:id])
-  end
-
   def destroy
     @user = authorize User.find(params[:id])
     @user.destroy
@@ -30,6 +26,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :photo)
   end
-
-
 end
