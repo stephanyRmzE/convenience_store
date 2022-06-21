@@ -43,7 +43,10 @@
       <% end %>
     </tbody>
   </table>
-  <h3>Total = <%= @order.sub_total %> </h3>
+  <div class ="cart-total">
+    <h3>Total  </h3>
+    <%= @order.sub_total %> 
+  </div>
   <div >
   <% if current_cart.present? %>
         <%= button_to "Buy now!", charges_create_path, remote: true, data: { disable_with: "validating..."}, class: "btn-yellow" %>

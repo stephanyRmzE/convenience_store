@@ -36,14 +36,18 @@
 
 .btn-yellow{
   width: 85%;
-  border-radius: 5rem;
+  border-radius: 0.5em;
   color: white;
   text-align: center;
-  background-color: #F59700;
+  background-color: #f8a306;
   font-size: 16px;
   padding: 0.5rem 3rem;
   border: none;
   display: block;
   text-decoration: none;
   margin: 0.5em auto;
+}
+
+.btn-yellow:hover {
+  box-shadow: inset 400px 0 0 0 #F59700;
 }
